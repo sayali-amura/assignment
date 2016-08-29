@@ -17,7 +17,7 @@ class Employee < ActiveRecord::Base
 
 	belongs_to :company
 	has_one :address
-	validates :email, :phone, uniqueness: true
+	validates :email, :phone, uniqueness: true {scope: :company}
 	validates :name, format: { with: /[[:alpha:]]+?[[a-z][A-z] ]+/,
 	 message: "Only letters and spaces allowed." }
 	validates :email, format: {with: /\A([^@\s]+)@(([a-z]+\.)+[a-z]{2,})\z/i, 
