@@ -1,0 +1,8 @@
+
+<p><strong>Name</strong></p>
+<%@companies.each do |company|%>
+<p>
+<%= company.name %>
+<%= link_to 'Edit Name',edit_company_path(company)%>
+</p>
+<%end%>

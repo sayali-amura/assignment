@@ -1,0 +1,19 @@
+<%=form_for @company do | f |%> 
+<p><strong>
+<%=f.label :Name %>
+</strong></p>
+<p>
+<%=f.text_field :name%>
+</p>
+<p><strong>
+	<%= f.label :Address %>
+</strong></p>
+<%= f.fields_for :addresses,@company.addresses do |addr|%>
+<p>
+<%= addr.text_field :city%>
+</p>
+<% end %>
+<p>
+<%= f.submit 'Add address',:name => "add_address" %></p>
+<%= f.submit 'Save' %>
+<% end %>

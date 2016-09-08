@@ -1,0 +1,11 @@
+<p>
+  <strong>name</strong>
+  <br>
+<%@employees.each do |employee|%>
+
+  <%= employee.name %>
+</p>
+<p>
+<%= link_to 'Edit details',edit_employee_path(employee) %>
+</p>
+<% end%>

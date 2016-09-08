@@ -1,0 +1,16 @@
+<!p id = 'flash-notice'>
+<!%=flash[:alert]%>
+<!/p>
+<p>
+	<strong>Name</strong>
+
+<%= @company.name%></p>
+<p>
+<strong>addressesses</strong>
+
+<%@company.addresses.each do |address|%>
+	
+		<%= address.city%>
+	
+	<% end %>
+</p>

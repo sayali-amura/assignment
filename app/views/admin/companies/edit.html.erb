@@ -1,0 +1,15 @@
+<%= form_for @company do |f|%>
+ <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %>
+  </p>
+<p><% @company.addresses.each do |addr|%>
+<%=f.fields_for :addresses,addr do |addr_field|%>
+
+    <%= addr_field.label :address %><br>
+    <%= addr_field.text_field :city %>
+  </p>
+  <%end%>
+<%end%>
+  <%= f.submit %>
+<%end%>

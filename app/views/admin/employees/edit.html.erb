@@ -1,0 +1,29 @@
+<%= form_for @employee do |f|%>
+ <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :email %>
+  </p>
+<p><%= fields_for:address,@employee.address do |addr|%>
+
+    <%= addr.label :address %><br>
+    <%= addr.text_field :city %>
+  </p>
+  <%end%>
+<p>
+    <%= f.label :Phone %><br>
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :pay %><br>
+    <%= f.text_field :salary %>
+  </p>
+  <p>
+    <%= f.label :post %><br>
+    <%= f.text_field :Designation %>
+  </p>
+  <%= f.submit %>
+<%end%>

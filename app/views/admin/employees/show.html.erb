@@ -1,0 +1,28 @@
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+ 
+<p>
+  <strong>Email</strong>
+  <%= @employee.email %>
+</p>
+<p>
+  <strong>Address</strong>
+  <%= @employee.address.city %>
+</p>
+<p>
+  <strong>phone</strong>
+  <%= @employee.phone %>
+</p>
+<p>
+  <strong>pay</strong>
+  <%= @employee.salary %>
+</p>
+<p>
+  <strong>Post</strong>
+  <%= @employee.Designation %>
+</p>
+<% @role = @employee.roles.first %> 
+<%= link_to 'Back to Home', employees_path%>
+<%= link_to 'Log out', logout_path %>

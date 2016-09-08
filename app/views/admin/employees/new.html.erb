@@ -1,0 +1,36 @@
+<p>
+	<%=flash[:danger]%>
+</p>
+<%= form_for @employee do | f | %>
+<p>
+<%= f.label :Name%>
+<%= f.text_field :name %> 
+</p>
+<p>
+<%= f.label :mailing_address%>
+<%= f.email_field :email %> 
+</p>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.label :password_confirmation, "Confirmation" %>
+<%= f.password_field :password_confirmation %>
+<p>
+<%= f.fields_for :address,@employee.address do |addr_attr| %>
+    <%= addr_attr.text_field :city %>
+  <% end %>
+  </p>
+<p>
+<%= f.label :contact_no%>
+<%= f.text_field :phone %> 
+</p>
+<p>
+<%= f.label :pay%>
+<%= f.text_field :salary %> 
+</p>
+<p>
+<%= f.label :post%>
+<%= f.text_field :Designation %> 
+</p>
+
+<%= f.submit %>
+<%end%>

@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  scope module: 'admin' do
+    resources :companies do
+      get 'download_pdf'
+    end
+    resources :employees do
+    resources :roles, shallow:true 
+      member do
+      get 'hello'
+      end
+    end
+    get 'signup' => 'employees#new'
+    get 'login' => 'sessions#new'
+    post 'login' => 'sessions#create'
+    get 'logout' => 'sessions#destroy'
+
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
